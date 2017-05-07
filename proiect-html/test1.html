@@ -3,10 +3,69 @@
 <head>
      <meta charset="UTF-8">
     <title>Test 1</title>
+
+<style>
+body {
+    background-color: #FFFFFF;
+}
+
+h1 {
+    color: #333333;
+    text-align: center;
+}
+
+p {
+    font-size: 20px;
+}
+table {
+	font-size:15px;
+}
+
+table.myTable {
+	width:550px;
+	border: 1px solid #CCCCCC;
+}
+table.myTable td {
+	border: 1px solid #CCCCCC;
+}
+</style>
+
 </head>
 <body>
 <h1>This is H1</h1>
 <h2>This is H2</h2>
 <h3>This is H3</h2>
+<table border="1" cellpadding="4" width="550">
+	<tr><!-- table row -->
+		<td width="30%">Column 1.1</td> <!-- table column -->
+		<td>Column 1.2</td>	<!-- table column -->
+	</tr>
+	<tr> <!-- table row -->
+		<td>Column 2.1</td> <!-- table column -->
+		<td>Column 2.2</td> <!-- table column -->	
+	</tr>
+</table>
+<br><! -- new line -->
+<table cellpadding="4" style="width:550px; border: 1px solid #ECECEC;">
+	<tr><!-- table row -->
+		<td width="30%" style="border: 1px solid #ECECEC;">Column 1.1</td> <!-- table column -->
+		<td style="border: 1px solid #ECECEC;">Column 1.2</td>	<!-- table column -->
+	</tr>
+	<tr> <!-- table row -->
+		<td style="border: 1px solid #ECECEC;">Column 2.1</td> <!-- table column -->
+		<td style="border: 1px solid #ECECEC;">Column 2.2</td> <!-- table column -->	
+	</tr>
+</table>
+<br> <!-- new line -->
+<table class="myTable" cellpadding="4">
+	<tr><!-- table row -->
+		<td width="30%">Column 1.1</td> <!-- table column -->
+		<td>Column 1.2</td>	<!-- table column -->
+	</tr>
+	<tr> <!-- table row -->
+		<td>Column 2.1</td> <!-- table column -->
+		<td>Column 2.2</td> <!-- table column -->	
+	</tr>
+</table>
 </body>
 </html>
