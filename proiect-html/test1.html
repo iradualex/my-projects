@@ -3,33 +3,47 @@
 <head>
      <meta charset="UTF-8">
     <title>Test 1</title>
-
-<style>
-body {
-    background-color: #FFFFFF;
-}
-
-h1 {
-    color: #333333;
-    text-align: center;
-}
-
-p {
-    font-size: 20px;
-}
-table {
-	font-size:15px;
-}
-
-table.myTable {
-	width:550px;
-	border: 1px solid #CCCCCC;
-}
-table.myTable td {
-	border: 1px solid #CCCCCC;
-}
-</style>
-
+	<!-- CSS Styles -->
+	<style>
+	body {
+	    background-color: #FFFFFF;
+	}
+	
+	h1 {
+	    color: #333333;
+	    text-align: center;
+	}
+	
+	p {
+	    font-size: 20px;
+	}
+	table {
+		font-size:15px;
+	}
+	
+	table.myTable {
+		width: 550px;
+		border: 1px solid #CCCCCC;
+	}
+	table.myTable td {
+		border: 1px solid #CCCCCC;
+		background: #778899;
+		color: #FFFFFF;
+	}
+	
+	div.myDiv1 {
+		border: 1px solid #CCCCCC;
+		width: 550px;
+		padding: 4px;
+		margin-bottom: 5px;
+	}
+	div.container1 {
+		width: 560px;
+	}
+	div.container2 div {
+		display:inline-block;
+	}
+	</style>
 </head>
 <body>
 <h1>This is H1</h1>
@@ -67,5 +81,23 @@ table.myTable td {
 		<td>Column 2.2</td> <!-- table column -->	
 	</tr>
 </table>
+<br> <!-- new line -->
+<div class="container1" title="Container One" style="background:#ECECEC;">
+	<div class="myDiv1">
+		My Div one
+	</div>
+	<div class="myDiv1">
+		My Div two
+	</div>
+</div>
+<br> <!-- new line -->
+<div class="container2" title="Container Two" style="background:#DDEEFF;">
+	<div class="myDiv1">
+		My Div three
+	</div>
+	<div class="myDiv1">
+		My Div four
+	</div>
+</div>
 </body>
 </html>
