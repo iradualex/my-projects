@@ -11,7 +11,7 @@ function calculateGeometryArea(figure, obj) {
 			var result = Math.round(100 * (height *base / 2)) / 100;
 			if((result <= 0) || isNaN(result)) {
 				result = 0;
-				html = '<h1 style="color:#FF3300">Area is Zero or Impossible !</h1>';
+				html = '<div align="right"><h1 style="color:#FF3300">Area is Zero or Impossible !</h1></div>';
 			} else {
 				html =  '<div align="right"><font color="#003399"><b>Area of TRIANGLE:</b></font> <font color="#778899"><b><i>[H='+height+' ; B='+base+']</i></b></font> = <font color="#FF6600"><b>'+result+'</b></font></div><hr>';
 			}
@@ -29,7 +29,7 @@ function calculateGeometryArea(figure, obj) {
 			var html = '';
 			if((result <= 0) || isNaN(result)) {
 				result = 0;
-				html = '<h1 style="color:#FF3300">Area is Zero or Impossible !</h1>';
+				html = '<div align="right"><h1 style="color:#FF3300">Area is Zero or Impossible !</h1></div>';
 			} else {
 				html = '<div align="right"><font color="#003399"><b>Area of TRIANGLE (Heron):</b></font> <font color="#778899"><b><i>[L1='+s1+' ; L2='+s2+' ; L3='+s3+' ; <span title="Calculated Value: Heron Semi-Perimeter">*HS='+heron+'</span>]</i></b></font> = <font color="#FF6600"><b>'+result+'</b></font></div><hr>';
 			}
