@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <meta charset="UTF-8">
+    <title>My 1st HTML Project - Radu Alexandru Ilies</title>
+    <link rel="stylesheet" href="css/w3.css">
+    <script type="text/javascript" src="js/area-calculator.js"></script>
+    <style>
+    .area-main {
+		text-align: left;    
+    }
+    </style>
+</head>
+<body>
+<!-- navigation menu -->
+  <div class="w3-bar w3-green">
+	<a href="index.html" class="w3-bar-item w3-button">Home</a>
+	<div class="w3-dropdown-hover">
+  		<button class="w3-button">Area Calculator</button>
+  		<div class="w3-dropdown-content w3-bar-block w3-card-4">
+  			<a href="#" class="w3-bar-item w3-button">Area Calculator - Triangle</a>
+		</div>
+	</div>
+</div>
+<br>
+<!-- page layout grid with 12 columns: 2 areas (6 columns / 6 columns) -->
+<div class="w3-row">
+  <div class="w3-col w3-container m6 l6"><!-- column one -->
+	<div class="area-main">
+		<h2 style="display:inline;">Area Calculator: Triangle</h2>
+		<!-- by Base and Height -->
+		<br>
+		<hr>
+		<h4>Calculate Triangle Area by Base and Height</h4>
+		<div class="w3-container">
+			<label class="w3-text-green">Triangle Base:</label>
+			<input id="bh-base" class="w3-input w3-border" style="width:200px;" type="text" maxlength="25">
+			<label class="w3-text-green">Triangle Height:</label>
+			<input id="bh-height" class="w3-input w3-border" style="width:200px;" type="text" maxlength="25">
+			<button id="bh-calculate" onclick="calculateTriangleAreaBH(); return false;" class="w3-button w3-green" style="margin-top:10px;">Calculate Area: Base &amp; Height</button>
+		</div>
+		<!-- by all sides: Heron -->
+		<br>
+		<hr>
+		<h4>Calculate Triangle Area by Sides (Heron)</h4>	
+		<div class="w3-container">
+			<label class="w3-text-green">Triangle Side 1:</label>
+			<input id="heron-s1" class="w3-input w3-border" style="width:200px;" type="text" maxlength="25">
+			<label class="w3-text-green">Triangle Side 2:</label>
+			<input id="heron-s2" class="w3-input w3-border" style="width:200px;" type="text" maxlength="25">
+			<label class="w3-text-green">Triangle Side 3:</label>
+			<input id="heron-s3" class="w3-input w3-border" style="width:200px;" type="text" maxlength="25">
+			<button id="heron-calculate" onclick="calculateTriangleAreaHeron(); return false;" class="w3-button w3-green" style="margin-top:10px;">Calculate Area: Base &amp; Height</button>
+		</div>
+		<br>
+		<hr>
+	</div>
+  </div>
+  <div class="w3-col w3-container m6 l6 w3-light-grey"><!-- column two -->
+  		<h3 style="display:inline;">Result:</h3> &nbsp; <button class="w3-button w3-green" onClick="self.location.reload();">Clear</button>
+  		<br>
+		<div id="result-calculate">
+			<br>
+		</div>
+		<br>
+		<br>
+  </div>
+</div>
+<br>
+<hr>
+<br>
+<script type="text/javascript">
+function calculateTriangleAreaBH() {
+	//-- read values from form fields
+	var base = document.getElementById('bh-base').value;
+	var height = document.getElementById('bh-height').value;
+	//-- calculate
+	var result = Math.round(100 * (parseFloat(height) * parseFloat(base) / 2)) / 100;
+	var html = '<div align="right"><font color="#003399"><b>Area of TRIANGLE:</b></font> <font color="#778899"><b><i>[H='+height+' ; B='+parseFloat(base)+']</i></b></font> = <font color="#FF6600"><b>'+parseFloat(result)+'</b></font></div><hr>';
+	//-- display
+	if((result <= 0) || isNaN(result)) {
+		alert('Area is Zero or Impossible !');
+	} else {
+		document.getElementById('result-calculate').innerHTML += html;
+	} //end if
+}
+function calculateTriangleAreaHeron() {
+	//-- read values from form fields
+	var s1 = document.getElementById('heron-s1').value;
+	var s2 = document.getElementById('heron-s2').value;
+	var s3 = document.getElementById('heron-s3').value;
+	//-- calculate
+	var calc = calculateGeometryArea('triangle-heron', {s1:s1, s2:s2, s3:s3});
+	//-- display
+	document.getElementById('result-calculate').innerHTML += calc.html;
+}
+</script>
+</body>
+</html>
