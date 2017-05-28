@@ -1,48 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-     <meta charset="UTF-8">
-    <title>Geometry: Area Calculator - Triangle</title>
-    <link rel="stylesheet" href="css/w3.css">
-    <script type="text/javascript" src="js/area-calculator.js"></script>
-    <style>
-    .area-main {
-		text-align: left;    
-    }
-    </style>
+	<meta charset="UTF-8">
+	<title>Learning resources / Geometry: Area Calculator - Triangle</title>
+	<link rel="stylesheet" href="fonts/exo2.css">
+	<style>
+	* {
+		font-family: 'Exo 2',arial,sans-serif;
+		font-smooth: always;
+	}
+	</style>
+	<link rel="stylesheet" href="css/w3.css">
+	<script type="text/javascript" src="js/js-geometry/area-calculator.js"></script>
+	<style>
+	.area-main {
+		text-align: left;
+	}
+	</style>
 </head>
 <body>
-<!-- navigation menu -->
-  <div class="w3-bar w3-green">
+<!-- navigation menu: learning resources / area calculator triangle -->
+<div class="w3-bar w3-indigo">
 	<a href="index.html" class="w3-bar-item w3-button">Home</a>
+	<a href="about-us.html" class="w3-bar-item w3-button">About us</a>
+	<a href="blog.html" class="w3-bar-item w3-button">Blog</a>
 	<div class="w3-dropdown-hover">
-  		<button class="w3-button">Area Calculator</button>
-  		<div class="w3-dropdown-content w3-bar-block w3-card-4">
-  			<a href="#" class="w3-bar-item w3-button">Area Calculator - Triangle</a>
+		<button class="w3-button">Learning resources</button>
+		<div class="w3-dropdown-content w3-bar-block w3-card-4">
+			<a href="#" class="w3-bar-item w3-button">Geometry: Area Calculator</a>
 		</div>
 	</div>
+	<a href="copyright.html" class="w3-bar-item w3-button">Copyright</a>
 </div>
 <br>
 <!-- page layout grid with 12 columns: 2 areas (6 columns / 6 columns) -->
 <div class="w3-row">
   <div class="w3-col w3-container m6 l6"><!-- column one -->
 	<div class="area-main">
-		<h2 style="display:inline;">Area Calculator: Triangle</h2>
+		<h2 style="display:inline;"><b>Geometry:</b> Area Calculator</h2>
 		<!-- by Base and Height -->
 		<br>
 		<hr>
-		<h4>Calculate Triangle Area by Base and Height</h4>
+		<h4>Calculate <b>Triangle Area by Base and Height</b></h4>
 		<div class="w3-container">
 			<label class="w3-text-green">Triangle Base:</label>
 			<input id="bh-base" class="w3-input w3-border" style="width:200px;" type="text" maxlength="25">
 			<label class="w3-text-green">Triangle Height:</label>
 			<input id="bh-height" class="w3-input w3-border" style="width:200px;" type="text" maxlength="25">
-			<button id="bh-calculate" onclick="calculateTriangleAreaBH(); return false;" class="w3-button w3-green" style="margin-top:10px;">Calculate Area: Base &amp; Height</button>
+			<button id="bh-calculate" onclick="calculateTriangleAreaBH(); return false;" class="w3-button w3-green" style="margin-top:10px;">Calculate Area</button>
 		</div>
 		<!-- by all sides: Heron -->
 		<br>
 		<hr>
-		<h4>Calculate Triangle Area by Sides (Heron)</h4>	
+		<h4>Calculate <b>Triangle Area by Sides (Heron)</b></h4>
 		<div class="w3-container">
 			<label class="w3-text-green">Triangle Side 1:</label>
 			<input id="heron-s1" class="w3-input w3-border" style="width:200px;" type="text" maxlength="25">
@@ -50,14 +60,21 @@
 			<input id="heron-s2" class="w3-input w3-border" style="width:200px;" type="text" maxlength="25">
 			<label class="w3-text-green">Triangle Side 3:</label>
 			<input id="heron-s3" class="w3-input w3-border" style="width:200px;" type="text" maxlength="25">
-			<button id="heron-calculate" onclick="calculateTriangleAreaHeron(); return false;" class="w3-button w3-green" style="margin-top:10px;">Calculate Area: Base &amp; Height</button>
+			<button id="heron-calculate" onclick="calculateTriangleAreaHeron(); return false;" class="w3-button w3-green" style="margin-top:10px;">Calculate Area</button>
 		</div>
 		<br>
 		<hr>
 	</div>
   </div>
   <div class="w3-col w3-container m6 l6 w3-light-grey"><!-- column two -->
-  		<h3 style="display:inline;">Result:</h3> &nbsp; <button class="w3-button w3-green" onClick="self.location.reload();">Clear</button>
+		<table width="100%"><tr>
+			<td width="50%">
+				<h3 style="display:inline;">Calculation <b>Results</b>:</h3>
+			</td>
+			<td align="right">
+				<button class="w3-button w3-red" onClick="self.location.reload();">Clear</button>
+			</td>
+		</tr></table>
   		<br>
 		<div id="result-calculate">
 			<br>
