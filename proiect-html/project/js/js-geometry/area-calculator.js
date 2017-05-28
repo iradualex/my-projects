@@ -8,10 +8,10 @@ function calculateGeometryArea(figure, obj) {
 		case 'triangle-bs': // triangle by base and height
 			var base = parseFloat(obj.base);
 			var height = parseFloat(obj.height);
-			var result = Math.round(100 * (height *base / 2)) / 100;
+			var result = Math.round(100 * (height * base / 2)) / 100;
 			if((result <= 0) || isNaN(result)) {
 				result = 0;
-				html = '<div align="right"><h1 style="color:#FF3300">Area is Zero or Impossible !</h1></div>';
+				html = '<div align="right"><font color="#FF3300"><b>Triangle Area is Zero or Impossible:</b></font> <font color="#778899"><b><i>[H='+height+' ; B='+base+']</i></b></font></div><hr>';
 			} else {
 				html =  '<div align="right"><font color="#003399"><b>Area of TRIANGLE:</b></font> <font color="#778899"><b><i>[H='+height+' ; B='+base+']</i></b></font> = <font color="#FF6600"><b>'+result+'</b></font></div><hr>';
 			}
@@ -29,13 +29,28 @@ function calculateGeometryArea(figure, obj) {
 			var html = '';
 			if((result <= 0) || isNaN(result)) {
 				result = 0;
-				html = '<div align="right"><h1 style="color:#FF3300">Area is Zero or Impossible !</h1></div>';
+				html = '<div align="right"><font color="#FF3300"><b>Triangle Area is Zero or Impossible:</b></font> <font color="#778899"><b><i>[L1='+s1+' ; L2='+s2+' ; L3='+s3+']</i></b></font></div><hr>';
 			} else {
 				html = '<div align="right"><font color="#003399"><b>Area of TRIANGLE (Heron):</b></font> <font color="#778899"><b><i>[L1='+s1+' ; L2='+s2+' ; L3='+s3+' ; <span title="Calculated Value: Heron Semi-Perimeter">*HS='+heron+'</span>]</i></b></font> = <font color="#FF6600"><b>'+result+'</b></font></div><hr>';
 			}
 			return {
 				result: result,
 				heron: heron,
+				html: html
+			};
+			break;
+		case 'rectangle': // rectangle by base and height
+			var base = parseFloat(obj.base);
+			var height = parseFloat(obj.height);
+			var result = Math.round(100 * (height * base)) / 100;
+			if((result <= 0) || isNaN(result)) {
+				result = 0;
+				html = '<div align="right"><font color="#FF3300"><b>Rectangle Area is Zero or Impossible:</b></font> <font color="#778899"><b><i>[H='+height+' ; B='+base+']</i></b></font></div><hr>';
+			} else {
+				html =  '<div align="right"><font color="#003399"><b>Area of RECTANGLE:</b></font> <font color="#778899"><b><i>[H='+height+' ; B='+base+']</i></b></font> = <font color="#FF6600"><b>'+result+'</b></font></div><hr>';
+			}
+			return {
+				result: result,
 				html: html
 			};
 			break;

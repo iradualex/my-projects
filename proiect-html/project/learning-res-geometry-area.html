@@ -34,11 +34,11 @@
 </div>
 <br>
 <!-- page layout grid with 12 columns: 2 areas (6 columns / 6 columns) -->
-<div class="w3-row">
+<div class="w3-row" style="margin-left:25px; margin-right:25px;">
   <div class="w3-col w3-container m6 l6"><!-- column one -->
 	<div class="area-main">
 		<h2 style="display:inline;"><b>Geometry:</b> Area Calculator</h2>
-		<!-- by Base and Height -->
+		<!-- Area Triangle: by Base and Height -->
 		<br>
 		<hr>
 		<h4>Calculate <b>Triangle Area by Base and Height</b></h4>
@@ -49,7 +49,7 @@
 			<input id="bh-height" class="w3-input w3-border" style="width:200px;" type="text" maxlength="25">
 			<button id="bh-calculate" onclick="calculateTriangleAreaBH(); return false;" class="w3-button w3-green" style="margin-top:10px;">Calculate Area</button>
 		</div>
-		<!-- by all sides: Heron -->
+		<!-- Area Triangle: by all sides (Heron) -->
 		<br>
 		<hr>
 		<h4>Calculate <b>Triangle Area by Sides (Heron)</b></h4>
@@ -62,6 +62,20 @@
 			<input id="heron-s3" class="w3-input w3-border" style="width:200px;" type="text" maxlength="25">
 			<button id="heron-calculate" onclick="calculateTriangleAreaHeron(); return false;" class="w3-button w3-green" style="margin-top:10px;">Calculate Area</button>
 		</div>
+
+		<!-- Area Rectangle: by Base and Height -->
+		<br>
+		<hr>
+		<h4>Calculate <b>Rectangle Area by Base and Height</b></h4>
+		<div class="w3-container">
+			<label class="w3-text-green">Rectangle Base:</label>
+			<input id="rs-base" class="w3-input w3-border" style="width:200px;" type="text" maxlength="25">
+			<label class="w3-text-green">Rectangle Height:</label>
+			<input id="rs-height" class="w3-input w3-border" style="width:200px;" type="text" maxlength="25">
+			<button id="bh-calculate" onclick="calculateRectangleArea(); return false;" class="w3-button w3-green" style="margin-top:10px;">Calculate Area</button>
+		</div>
+
+		<!-- endings -->
 		<br>
 		<hr>
 	</div>
@@ -95,6 +109,7 @@ function calculateTriangleAreaBH() {
 	var calc = calculateGeometryArea('triangle-bs', {base:base, height:height});
 	//-- display
 	document.getElementById('result-calculate').innerHTML += calc.html;
+	//--
 }
 function calculateTriangleAreaHeron() {
 	//-- read values from form fields
@@ -105,6 +120,17 @@ function calculateTriangleAreaHeron() {
 	var calc = calculateGeometryArea('triangle-heron', {s1:s1, s2:s2, s3:s3});
 	//-- display
 	document.getElementById('result-calculate').innerHTML += calc.html;
+	//--
+}
+function calculateRectangleArea() {
+	//-- read values from form fields
+	var base = document.getElementById('rs-base').value;
+	var height = document.getElementById('rs-height').value;
+	//-- calculate
+	var calc = calculateGeometryArea('rectangle', {base:base, height:height});
+	//-- display
+	document.getElementById('result-calculate').innerHTML += calc.html;
+	//--
 }
 </script>
 </body>
